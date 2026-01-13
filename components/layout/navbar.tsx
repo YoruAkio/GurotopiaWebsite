@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <nav className={`fixed z-50 w-full transition-all duration-300 ${isScrolled ? "top-0 px-6 py-4" : "top-4 px-4 py-4 md:top-12 md:px-6"}`}>
       <div className={`mx-auto w-full transition-all duration-300 ${isScrolled ? "max-w-[85%] md:w-[60%]" : "max-w-[90%] md:w-[50%]"}`}>
-        <div className="flex items-center justify-between gap-4 rounded-lg border border-border bg-background/80 px-6 py-2 backdrop-blur-md md:gap-8">
+        <div className="flex items-center justify-between gap-4 rounded-2xl border border-border bg-background/80 px-6 py-2 backdrop-blur-md md:gap-8">
           <Link href="/" className="text-xl font-bold tracking-tight">
             Gurotopia
           </Link>
@@ -58,6 +58,12 @@ export default function Navbar() {
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               About
+            </Link>
+            <Link
+              href="/docs"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Docs
             </Link>
             <Link
               href="https://github.com/gurotopia"
@@ -126,6 +132,13 @@ export default function Navbar() {
                 onClick={handleToggle}
               >
                 About
+              </Link>
+              <Link
+                href="/docs"
+                className="block py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                onClick={handleToggle}
+              >
+                Docs
               </Link>
               <Link
                 href="https://github.com/gurotopia"

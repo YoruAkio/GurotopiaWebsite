@@ -34,6 +34,14 @@ export default function Footer() {
                     About
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/docs"
+                    className="text-xs text-muted-foreground transition-colors hover:text-foreground sm:text-sm"
+                  >
+                    Documentation
+                  </Link>
+                </li>
               </ul>
             </div>
 
