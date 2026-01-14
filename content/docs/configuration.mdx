@@ -47,6 +47,48 @@ sudo nano /etc/hosts
 
 4. Save with `Ctrl + O`, then exit with `Ctrl + X`
 
+## Server File Configuration
+
+The server configuration is managed through the `server_data.php` file. This file is automatically created with default values on first run if it doesn't exist.
+
+### Configuration Options
+
+The `server_data.php` file contains the following configuration parameters:
+
+| Parameter | Description | Default Value |
+|-----------|-------------|---------------|
+| `server` | Server IP address | `127.0.0.1` |
+| `port` | Server port number | `17091` |
+| `type` | Server type identifier | `1` |
+| `type2` | Secondary server type identifier | `1` |
+| `maint` | Maintenance message displayed when server is under maintenance | `Server under maintenance. Please try again later.` |
+| `loginurl` | Login server URL | `login-gurotopia.vercel.app` |
+| `meta` | Server metadata identifier | `gurotopia` |
+
+### Example Configuration
+
+```php
+server|127.0.0.1
+port|17091
+type|1
+type2|1
+#maint|Server under maintenance. Please try again later.
+loginurl|login-gurotopia.vercel.app
+meta|gurotopia
+RTENDMARKERBS1001
+```
+
+<Callout type="info">
+Lines starting with `#` are treated as comments and won't affect the configuration. The file must end with `RTENDMARKERBS1001` to be properly parsed.
+</Callout>
+
+### Editing the Configuration
+
+1. Open the `server_data.php` file in a text editor
+2. Modify the desired configuration values
+3. Save the file
+4. Restart the server for changes to take effect
+
 ## Reverting Changes
 
 To connect to official Growtopia servers again, remove or comment out the lines you added to the hosts file:
@@ -55,5 +97,3 @@ To connect to official Growtopia servers again, remove or comment out the lines 
 # 127.0.0.1 www.growtopia1.com
 # 127.0.0.1 www.growtopia2.com
 ```
-
-
