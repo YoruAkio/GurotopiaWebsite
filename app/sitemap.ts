@@ -16,12 +16,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // @note add all docs pages to sitemap
   const pages = source.getPages();
-  const docsRoutes: MetadataRoute.Sitemap = pages.map((page) => ({
-    url: `${baseUrl}/docs/${page.url}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly",
-    priority: 0.8
-  }));
+  const docsRoutes: MetadataRoute.Sitemap = pages.map((page) => {
+    const cleanUrl = page.url.startsWith('/docs') ? page.url : `/docs/${page.url}`;
+    return {
+      url: `${baseUrl}${cleanUrl}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8
+    };
+  });
 
   return [...routes, ...docsRoutes];
 }
